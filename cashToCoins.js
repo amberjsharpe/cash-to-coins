@@ -1,23 +1,47 @@
-// Put coins in your piggy bank
+// How much cash
 
-const piggyBank = {quarters: 26, dimes: 39, nickels: 5, pennies: 7};
+var cashAmount = ( 10.68 ) * 100;
 
-// What is the value of each
+// Coin values 
 
-const coinValue = {quarters: .25, dimes: .10, nickels: .05, pennies: .01};
+var quarterValue = 25;
+var dimeValue = 10;
+var nickelValue = 5;
+var pennyValue = 1;
 
-// Get coin amounts with math
-let quartersValue = piggyBank.quarters * coinValue.quarters;
-let dimesValue = piggyBank.dimes * coinValue.dimes;
-let nickelsValue = piggyBank.nickels * coinValue.nickels;
-let penniesValue = piggyBank.pennies * coinValue.pennies;
+// Number of Quarters
+var quartersSum = (cashAmount / quarterValue);
+var numofQuarters = Math.floor(cashAmount / quarterValue);
+console.log(quartersSum);
+console.log(numofQuarters);
 
-// Add coin amounts together
 
-var piggyCash = quartersValue + dimesValue + nickelsValue + penniesValue;
+// Number of Dimes
+var dimesSum = (cashAmount - (numofQuarters * quarterValue));
+var numofDimes = Math.floor(dimesSum / dimeValue);
+console.log(dimesSum);
+console.log(numofDimes);
 
-// Make it rain
-console.log(piggyCash);
+// Number of Nickels 
+var nickelsSum = dimesSum - (numofDimes * dimeValue);
+var numofNickels = Math.floor(nickelsSum / nickelValue);
+console.log(nickelsSum);
+console.log(numofNickels);
+
+// Number of Pennies
+var penniesSum = nickelsSum - (numofNickels * nickelValue);
+var numofPennies = Math.floor(penniesSum / pennyValue);
+console.log(penniesSum);
+console.log(numofPennies);
+
+// Place to put coins
+
+var coinJar = {quarters: numofQuarters, dimes: numofDimes, nickels: numofNickels, pennies: numofPennies};
+console.log(coinJar);
+
+
+
+
 
 
 
